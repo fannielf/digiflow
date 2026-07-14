@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DigiFlow</title>
-  <meta name="description" content="DigiFlow hjälper små och medelstora företag och organisationer att navigera digitaliseringens möjligheter." />
+  <meta name="description" content="DigiFlow hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -92,30 +92,6 @@
     }
 
     .nav-cta:hover { background: var(--pink) !important; }
-
-    /* Language switcher */
-    .lang-switcher {
-      display: flex;
-      gap: 0.25rem;
-      align-items: center;
-    }
-
-    .lang-btn {
-      background: none;
-      border: 1.5px solid transparent;
-      border-radius: 6px;
-      padding: 0.2rem 0.5rem;
-      font-family: inherit;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: pointer;
-      transition: color 0.15s, border-color 0.15s;
-      letter-spacing: 0.04em;
-    }
-
-    .lang-btn:hover { color: var(--teal); }
-    .lang-btn.active { color: var(--teal); border-color: var(--teal); }
 
     /* ── HERO ── */
     .hero {
@@ -276,7 +252,12 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.25rem;
-      font-size: 1.4rem;
+      color: var(--teal);
+    }
+
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
     }
 
     .service-card h3 {
@@ -345,6 +326,20 @@
 
     .product-card h4 { font-weight: 600; font-size: 1rem; color: var(--ink); }
     .product-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+
+    .product-includes {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .product-card .service-list { margin-top: 0.4rem; }
+
+    .product-card .service-list li { font-size: 0.85rem; color: var(--text); }
 
     .product-card.placeholder {
       align-items: center;
@@ -427,7 +422,7 @@
       grid-template-columns: 220px 1fr;
       gap: 4rem;
       max-width: 960px;
-      align-items: start;
+      align-items: center;
     }
 
     .about-photo-wrap {
@@ -435,14 +430,12 @@
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      position: sticky;
-      top: 84px;
     }
 
     .about-photo {
       width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      height: 260px;
+      border-radius: 20px;
       background: linear-gradient(135deg, var(--foam) 0%, #c8e8e8 100%);
       border: 3px solid var(--border);
       display: flex;
@@ -459,7 +452,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 17px;
     }
 
     .about-name {
@@ -483,23 +476,7 @@
       margin-bottom: 1.25rem;
     }
 
-    .about-text p:last-of-type { margin-bottom: 1.75rem; }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .about-tag {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--teal);
-      background: var(--foam);
-      border: 1px solid var(--border);
-      padding: 0.3rem 0.75rem;
-      border-radius: 100px;
-    }
+    .about-text p:last-of-type { margin-bottom: 0; }
 
     @media (max-width: 700px) {
       .about-inner {
@@ -507,7 +484,7 @@
         gap: 2rem;
       }
       .about-photo-wrap { position: static; flex-direction: row; align-items: center; gap: 1.25rem; }
-      .about-photo { width: 80px; height: 80px; font-size: 0.6rem; }
+      .about-photo { width: 80px; height: 104px; font-size: 0.6rem; }
       .about-name, .about-role { text-align: left; }
     }
 
@@ -546,69 +523,84 @@
     <a href="#" class="nav-logo">Digi<span>Flow</span></a>
     <div class="nav-right">
       <ul>
-        <li><a href="#tjanster" data-i18n="nav_services"></a></li>
-        <li><a href="#om-mig" data-i18n="nav_about"></a></li>
-        <li><a href="#erbjudanden" data-i18n="nav_offerings"></a></li>
-        <li><a href="#kontakt" class="nav-cta" data-i18n="nav_contact"></a></li>
+        <li><a href="#tjanster">Tjänster</a></li>
+        <li><a href="#om-mig">Om mig</a></li>
+        <li><a href="#erbjudanden">Erbjudanden</a></li>
+        <li><a href="#kontakt" class="nav-cta">Kontakta mig</a></li>
       </ul>
-      <div class="lang-switcher">
-        <button class="lang-btn active" onclick="setLang('sv')">SV</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('fi')">FI</button>
-      </div>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-badge" data-i18n="hero_badge"></span>
-      <h1 data-i18n="hero_h1"></h1>
-      <p data-i18n="hero_p"></p>
+      <span class="hero-badge">Processer · Digitalisering · Projektstöd</span>
+      <h1>Från röriga processer till <em>digital klarhet</em></h1>
+      <p>DigiFlow hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering.</p>
       <div class="hero-actions">
-        <a href="#kontakt" class="btn-primary" data-i18n="hero_cta1"></a>
-        <a href="#tjanster" class="btn-secondary" data-i18n="hero_cta2"></a>
+        <a href="#kontakt" class="btn-primary">Boka ett samtal</a>
+        <a href="#tjanster" class="btn-secondary">Se mina tjänster</a>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section class="services" id="tjanster">
-    <p class="section-label" data-i18n="services_label"></p>
-    <h2 class="section-title" data-i18n="services_title"></h2>
-    <p class="section-sub" data-i18n="services_sub"></p>
+    <h2 class="section-title">Tre sätt DigiFlow skapar värde</h2>
+    <p class="section-sub">Jag möter er där ni är och hjälper er dit ni vill vara.</p>
     <div class="services-grid">
 
       <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <h3 data-i18n="s1_title"></h3>
-        <p data-i18n="s1_desc"></p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="5" cy="6" r="2" />
+            <circle cx="19" cy="6" r="2" />
+            <circle cx="12" cy="18" r="2" />
+            <path d="M7 6h10" />
+            <path d="M6.2 7.7 10.8 16" />
+            <path d="M17.8 7.7 13.2 16" />
+          </svg>
+        </div>
+        <h3>Processeffektivisering</h3>
+        <p>Jag kartlägger hur ni jobbar idag, identifierar flaskhalsar och designar effektivare flöden som faktiskt används.</p>
         <ul class="service-list">
-          <li data-i18n="s1_l1"></li>
-          <li data-i18n="s1_l2"></li>
-          <li data-i18n="s1_l3"></li>
+          <li>Processkartläggning och analys</li>
+          <li>Workshopledning och förändringsstöd</li>
+          <li>Rutiner och dokumentation</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🚀</div>
-        <h3 data-i18n="s2_title"></h3>
-        <p data-i18n="s2_desc"></p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12a8 8 0 0 1 13.5-5.8L20 8" />
+            <path d="M20 3.5V8h-4.5" />
+            <path d="M20 12a8 8 0 0 1-13.5 5.8L4 16" />
+            <path d="M4 20.5V16h4.5" />
+          </svg>
+        </div>
+        <h3>Automatisering &amp; digitalisering</h3>
+        <p>Vilka manuella steg kan automatiseras? Jag hjälper er att välja rätt verktyg och genomföra förändringen utan onödiga risker.</p>
         <ul class="service-list">
-          <li data-i18n="s2_l1"></li>
-          <li data-i18n="s2_l2"></li>
-          <li data-i18n="s2_l3"></li>
+          <li>Digital mognadsbedömning</li>
+          <li>Verktygs- och leverantörsutvärdering</li>
+          <li>Implementeringsstöd och uppföljning</li>
         </ul>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🧭</div>
-        <h3 data-i18n="s3_title"></h3>
-        <p data-i18n="s3_desc"></p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M15.8 8.2 13.5 13.5 8.2 15.8 10.5 10.5z" />
+          </svg>
+        </div>
+        <h3>Projektstöd</h3>
+        <p>Behöver ni en projektledare men inte på heltid? Jag kliver in i era projekt vid behov, håller ihop kravspecifikationen och ser till att de digitala delarna blir begripliga i diskussioner och beslut.</p>
         <ul class="service-list">
-          <li data-i18n="s3_l1"></li>
-          <li data-i18n="s3_l2"></li>
-          <li data-i18n="s3_l3"></li>
+          <li>Projektledare att hyra in, inte anställa</li>
+          <li>Kravspecifikation för upphandlingsunderlag</li>
+          <li>Översätter tekniken till klarspråk i beslut</li>
         </ul>
       </div>
 
@@ -617,80 +609,84 @@
 
   <!-- ABOUT -->
   <section class="about" id="om-mig">
-    <p class="section-label" data-i18n="about_label"></p>
-    <h2 class="section-title" data-i18n="about_title"></h2>
+    <p class="section-label">Bakom DigiFlow</p>
+    <h2 class="section-title">Hej, jag heter Fanni</h2>
     <div class="about-inner">
       <div class="about-photo-wrap">
-        <!-- Replace the div below with: <img src="your-photo.jpg" alt="Fanni Vesanen"> -->
         <div class="about-photo">
-          <span data-i18n="about_photo_placeholder"></span>
+          <img src="images/fanni.jpg" alt="Fanni Vesanen" />
         </div>
         <div>
           <div class="about-name">Fanni Vesanen</div>
-          <div class="about-role" data-i18n="about_role"></div>
+          <div class="about-role">Grundare · Processpecialist · Systemutvecklare</div>
         </div>
       </div>
       <div class="about-text">
-        <p data-i18n="about_p1"></p>
-        <p data-i18n="about_p2"></p>
-        <p data-i18n="about_p3"></p>
-        <div class="about-tags">
-          <span class="about-tag" data-i18n="tag_logistics"></span>
-          <span class="about-tag" data-i18n="tag_public"></span>
-          <span class="about-tag" data-i18n="tag_insurance"></span>
-          <span class="about-tag" data-i18n="tag_fintech"></span>
-          <span class="about-tag" data-i18n="tag_hospitality"></span>
-          <span class="about-tag" data-i18n="tag_commerce"></span>
-          <span class="about-tag" data-i18n="tag_process"></span>
-          <span class="about-tag" data-i18n="tag_pm"></span>
-        </div>
+        <p>Med över tio års erfarenhet från logistik, handel, offentlig sektor, försäkring, fintech och hospitality har jag gång på gång sett hur manuella arbetssätt och otydliga processer bromsar verksamheter.</p>
+        <p>Jag flyttade till Åland 2018 från fastlandet och har sedan dess sett hur mycket potential som finns i det åländska näringslivet. Här finns korta beslutsvägar, nära samarbeten och en stark entreprenörsanda. Samtidigt saknar många verksamheter tid och stöd för att utveckla sina arbetssätt i takt med att de växer.</p>
+        <p>Under större delen av min karriär har jag arbetat med processutveckling, projektledning och kundtjänst. För att bättre kunna möta dagens digitala utmaningar kompletterade jag min erfarenhet med en IT-examen från ÅYS / grit:lab och arbetar idag som systemutvecklare.</p>
+        <p>Jag arbetar obehindrat på svenska, finska, engelska och tyska. Det gör mig till en smidig länk i projekt som rör både Åland, fastlandet och internationella samarbetspartners.</p>
       </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section class="products" id="erbjudanden">
-    <p class="section-label" data-i18n="products_label"></p>
-    <h2 class="section-title" data-i18n="products_title"></h2>
-    <p class="section-sub" data-i18n="products_sub"></p>
+    <p class="section-label">Erbjudanden</p>
+    <h2 class="section-title">Paket och produkter</h2>
+    <p class="section-sub">Tjänsterna ovan kombineras efter behov. Ett upplägg kan vara allt från ett litet första steg till hela resan.</p>
     <div class="products-grid">
-      <!-- Replace placeholders with real product cards when ready:
+
       <div class="product-card filled">
-        <span class="product-tag">Workshop</span>
-        <h4>...</h4>
-        <p>...</p>
+        <span class="product-tag">Första steget</span>
+        <h4>Nulägeskoll</h4>
+        <p>Ett avgränsat uppdrag för er som vill se var ni står innan ni bestämmer nästa drag. Ni får en tydlig bild av era processer och var det finns mest att vinna.</p>
+        <p class="product-includes">Bygger på</p>
+        <ul class="service-list">
+          <li>Processeffektivisering</li>
+        </ul>
       </div>
-      -->
-      <div class="product-card placeholder">
-        <span>＋</span>
-        <p data-i18n="products_soon"></p>
+
+      <div class="product-card filled">
+        <span class="product-tag">Vanligast</span>
+        <h4>Karta &amp; färdplan</h4>
+        <p>Nuläget kartlagt och en prioriterad plan framåt. Ni vet både var ni står och vilka digitala steg som ger mest värde. Det blir ett tryggt underlag inför beslut.</p>
+        <p class="product-includes">Bygger på</p>
+        <ul class="service-list">
+          <li>Processeffektivisering</li>
+          <li>Automatisering &amp; digitalisering</li>
+        </ul>
       </div>
-      <div class="product-card placeholder">
-        <span>＋</span>
-        <p data-i18n="products_soon"></p>
+
+      <div class="product-card filled">
+        <span class="product-tag">Hela resan</span>
+        <h4>Från nuläge till nytt arbetssätt</h4>
+        <p>Hela förändringen från början till slut. Jag följer med från första kartläggningen ända till att de nya arbetssätten sitter. Ni står aldrig ensamma i genomförandet.</p>
+        <p class="product-includes">Bygger på</p>
+        <ul class="service-list">
+          <li>Processeffektivisering</li>
+          <li>Automatisering &amp; digitalisering</li>
+          <li>Projektstöd</li>
+        </ul>
       </div>
-      <div class="product-card placeholder">
-        <span>＋</span>
-        <p data-i18n="products_soon"></p>
-      </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="contact" id="kontakt">
     <div class="contact-inner">
-      <p class="section-label" data-i18n="contact_label"></p>
-      <h2 class="section-title" data-i18n="contact_title"></h2>
-      <p class="section-sub" data-i18n="contact_sub"></p>
+      <p class="section-label">Kontakt</p>
+      <h2 class="section-title">Redo att ta nästa steg?</h2>
+      <p class="section-sub">Skicka ett mail så återkommer jag inom en arbetsdag.</p>
       <div class="contact-email-block">
         <a href="mailto:placeholder@foremail" class="contact-email-link">placeholder@foremail</a>
       </div>
       <div class="contact-prep">
-        <p><strong data-i18n="prep_heading"></strong></p>
+        <p><strong>Skriv gärna några rader redan i mailet, så kommer jag påläst till vårt första samtal:</strong></p>
         <ul>
-          <li data-i18n="prep_l1"></li>
-          <li data-i18n="prep_l2"></li>
-          <li data-i18n="prep_l3"></li>
+          <li>Vilka ni är, gärna med företagsnamn eller webbplats</li>
+          <li>Hur det ser ut hos er idag och vad som skaver</li>
         </ul>
       </div>
     </div>
@@ -699,201 +695,9 @@
   <!-- FOOTER -->
   <footer>
     <a href="#" class="footer-logo">Digi<span>Flow</span></a>
-    <span data-i18n="footer_copy"></span>
+    <span>© 2026 DigiFlow. Alla rättigheter förbehållna.</span>
   </footer>
 
-  <script>
-    const translations = {
-      sv: {
-        nav_services:   'Tjänster',
-        nav_about:      'Om mig',
-        nav_offerings:  'Erbjudanden',
-        nav_contact:    'Kontakta oss',
-        hero_badge:     'Processer · Digitalisering · Projektstöd',
-        hero_h1:        'Från röriga processer till <em>digital klarhet</em>',
-        hero_p:         'DigiFlow hjälper små och medelstora företag och organisationer som inte är verksamma inom det tekniska att navigera digitaliseringens och automatiseringens möjligheter.',
-        hero_cta1:      'Boka ett samtal',
-        hero_cta2:      'Se våra tjänster',
-        services_label: 'Vad vi gör',
-        services_title: 'Tre sätt vi skapar värde',
-        services_sub:   'Vi möter er där ni är – och hjälper er dit ni vill vara.',
-        s1_title: 'Processeffektivisering',
-        s1_desc:  'Vi kartlägger hur ni jobbar idag, identifierar flaskhalsar och designar effektivare flöden som faktiskt används.',
-        s1_l1: 'Processkartläggning och analys',
-        s1_l2: 'Workshopledning och förändringsstöd',
-        s1_l3: 'Rutiner och dokumentation',
-        s2_title: 'Automatisering & digitalisering',
-        s2_desc:  'Vilka manuella steg kan automatiseras? Vi hjälper er att välja rätt verktyg och genomföra förändringen utan onödiga risker.',
-        s2_l1: 'Digital mognadsbedömning',
-        s2_l2: 'Verktygsval och leverantörsutvärdering',
-        s2_l3: 'Implementeringsstöd och uppföljning',
-        s3_title: 'Projektstöd (köparsidan)',
-        s3_desc:  'Upphandlar ni tekniska tjänster eller system? Vi är ert stöd under hela processen – från kravställning till avtalssignering.',
-        s3_l1: 'Kravspecifikation och RFI/RFP',
-        s3_l2: 'Leverantörsutvärdering',
-        s3_l3: 'Projektledning på köparsidan',
-        about_label:  'Bakom DigiFlow',
-        about_title:  'Hej, jag heter Fanni',
-        about_photo_placeholder: 'Lägg till\nett foto här',
-        about_role:   'Grundare · Processpecialist · Systemutvecklare',
-        about_p1:     'Med över tio års erfarenhet från logistik, handel, offentlig sektor, försäkring, fintech och hospitality har jag gång på gång sett hur manuella arbetssätt och otydliga processer bromsar verksamheter.',
-        about_p2:     'Jag flyttade till Åland 2018 från fastlandet och har sedan dess sett hur mycket potential som finns i det åländska näringslivet. Här finns korta beslutsvägar, nära samarbeten och en stark entreprenörsanda. Samtidigt saknar många verksamheter tid och stöd för att utveckla sina arbetssätt i takt med att de växer.',
-        about_p3:     'Under större delen av min karriär har jag arbetat med processutveckling, projektledning och kundtjänst. För att bättre kunna möta dagens digitala utmaningar kompletterade jag min erfarenhet med en IT-examen från ÅYS / grit:lab och arbetar idag som systemutvecklare.',
-        tag_logistics:   'Logistik',
-        tag_public:      'Offentlig sektor',
-        tag_insurance:   'Försäkring',
-        tag_fintech:     'Fintech',
-        tag_hospitality: 'Hospitality',
-        tag_commerce:    'Handel',
-        tag_process:     'Processledning',
-        tag_pm:          'Projektledning',
-        products_label: 'Erbjudanden',
-        products_title: 'Paket och produkter',
-        products_sub:   'Fasta erbjudanden för vanliga behov – tydlig scope, tydligt pris.',
-        products_soon:  'Produkt eller paket kommer snart',
-        contact_label:  'Kontakt',
-        contact_title:  'Redo att ta nästa steg?',
-        contact_sub:    'Skicka ett mail så återkommer vi inom en arbetsdag.',
-        prep_heading:   'För att få ut så mycket som möjligt av vårt första möte får ni gärna bifoga:',
-        prep_l1: 'En kort beskrivning av er verksamhet',
-        prep_l2: 'Ungefärligt antal anställda',
-        prep_l3: 'De viktigaste utmaningarna eller problemen ni står inför just nu',
-        footer_copy: '© 2026 DigiFlow. Alla rättigheter förbehållna.',
-      },
-      en: {
-        nav_services:   'Services',
-        nav_about:      'About',
-        nav_offerings:  'Offerings',
-        nav_contact:    'Contact us',
-        hero_badge:     'Processes · Digitalisation · Project support',
-        hero_h1:        'From tangled processes to <em>digital clarity</em>',
-        hero_p:         'DigiFlow helps small and medium-sized companies and organisations that don\'t operate in tech to navigate the possibilities of digitalisation and automation.',
-        hero_cta1:      'Book a call',
-        hero_cta2:      'See our services',
-        services_label: 'What we do',
-        services_title: 'Three ways we create value',
-        services_sub:   'We meet you where you are – and help you get where you want to be.',
-        s1_title: 'Process improvement',
-        s1_desc:  'We map how you work today, identify bottlenecks and design more effective flows that actually get used.',
-        s1_l1: 'Process mapping and analysis',
-        s1_l2: 'Workshop facilitation and change support',
-        s1_l3: 'Routines and documentation',
-        s2_title: 'Automation & digitalisation',
-        s2_desc:  'Which manual steps can be automated? We help you choose the right tools and carry out the change without unnecessary risk.',
-        s2_l1: 'Digital maturity assessment',
-        s2_l2: 'Tool selection and vendor evaluation',
-        s2_l3: 'Implementation support and follow-up',
-        s3_title: 'Project support (buyer side)',
-        s3_desc:  'Procuring technical services or systems? We support you throughout the process – from requirements to contract signing.',
-        s3_l1: 'Requirements specification and RFI/RFP',
-        s3_l2: 'Vendor evaluation',
-        s3_l3: 'Project management on the buyer side',
-        about_label:  'Behind DigiFlow',
-        about_title:  'Hi, I\'m Fanni',
-        about_photo_placeholder: 'Add a\nphoto here',
-        about_role:   'Founder · Process specialist · software engineer',
-        about_p1:     'With over a decade of experience across logistics, commerce, public sector, insurance, fintech and hospitality, I know what it looks like when processes grow organically – and what it costs when they\'re never reviewed.',
-        about_p2:     'I moved to Åland eight years ago from mainland Finland and have since seen the enormous potential in the local business community: creativity, closeness and strong relationships. What\'s sometimes missing are the tools to scale without losing what makes each organisation unique.',
-        about_p3:     'My background is in process management and project leadership. I recently completed my ICT degree at ÅYS / grit:lab and now work as a software engineer – but DigiFlow is how I put my full experience to use. I stand on the client\'s side and help organisations free up time for what truly creates value: customers and creative work.',
-        tag_logistics:   'Logistics',
-        tag_public:      'Public sector',
-        tag_insurance:   'Insurance',
-        tag_fintech:     'Fintech',
-        tag_hospitality: 'Hospitality',
-        tag_commerce:    'Commerce',
-        tag_process:     'Process management',
-        tag_pm:          'Project management',
-        products_label: 'Offerings',
-        products_title: 'Packages and products',
-        products_sub:   'Fixed offerings for common needs – clear scope, clear price.',
-        products_soon:  'Product or package coming soon',
-        contact_label:  'Contact',
-        contact_title:  'Ready to take the next step?',
-        contact_sub:    'Send us an email and we\'ll get back to you within one business day.',
-        prep_heading:   'To get the most out of our first meeting, feel free to include:',
-        prep_l1: 'A brief description of your organisation',
-        prep_l2: 'Approximate number of employees',
-        prep_l3: 'The key challenges or problems you are currently facing',
-        footer_copy: '© 2026 DigiFlow. All rights reserved.',
-      },
-      fi: {
-        nav_services:   'Palvelut',
-        nav_about:      'Minusta',
-        nav_offerings:  'Tarjoukset',
-        nav_contact:    'Ota yhteyttä',
-        hero_badge:     'Prosessit · Digitalisaatio · Projekttuki',
-        hero_h1:        'Sekavista prosesseista <em>digitaaliseen selkeyteen</em>',
-        hero_p:         'DigiFlow auttaa pieniä ja keskisuuria yrityksiä ja organisaatioita, jotka eivät toimi teknisellä alalla, navigoimaan digitalisaation ja automaation mahdollisuuksissa.',
-        hero_cta1:      'Varaa tapaaminen',
-        hero_cta2:      'Katso palvelumme',
-        services_label: 'Mitä teemme',
-        services_title: 'Kolme tapaa luoda arvoa',
-        services_sub:   'Kohtaamme teidät siellä missä olette – ja autamme teitä sinne, minne haluatte.',
-        s1_title: 'Prosessien tehostaminen',
-        s1_desc:  'Kartoitamme nykytilan, tunnistamme pullonkaulat ja suunnittelemme tehokkaammat toimintamallit, joita oikeasti käytetään.',
-        s1_l1: 'Prosessien kartoitus ja analyysi',
-        s1_l2: 'Workshopit ja muutostuki',
-        s1_l3: 'Toimintaohjeet ja dokumentaatio',
-        s2_title: 'Automaatio & digitalisaatio',
-        s2_desc:  'Mitkä manuaaliset vaiheet voidaan automatisoida? Autamme valitsemaan oikeat työkalut ja viemään muutoksen läpi hallitusti.',
-        s2_l1: 'Digitaalisen kypsyyden arviointi',
-        s2_l2: 'Työkalujen valinta ja toimittaja-arviointi',
-        s2_l3: 'Käyttöönoton tuki ja seuranta',
-        s3_title: 'Projekttuki (ostajan puoli)',
-        s3_desc:  'Hankkimassa teknisiä palveluja tai järjestelmiä? Olemme tukenanne koko prosessin ajan – vaatimusmäärittelystä sopimuksen allekirjoittamiseen.',
-        s3_l1: 'Vaatimusmäärittely ja RFI/RFP',
-        s3_l2: 'Toimittaja-arviointi',
-        s3_l3: 'Projektinhallinta ostajan puolella',
-        about_label:  'DigiFlow\'n takana',
-        about_title:  'Hei, olen Fanni',
-        about_photo_placeholder: 'Lisää kuva\ntähän',
-        about_role:   'Perustaja · Prosessiasiantuntija · ICT-insinööri',
-        about_p1:     'Yli kymmenen vuoden kokemus logistiikasta, kaupan alalta, julkisesta sektorista, vakuutuksesta, fintechistä ja hospitality-alalta on opettanut minulle, miltä näyttää, kun prosessit kasvavat orgaanisesti – ja mitä maksaa, kun niitä ei koskaan tarkisteta.',
-        about_p2:     'Muutin Ahvenanmaalle kahdeksan vuotta sitten manner-Suomesta ja olen siitä lähtien nähnyt, kuinka paljon potentiaalia paikallisessa yritysyhteisössä on: luovuutta, läheisyyttä ja vahvoja suhteita. Joskus puuttuvat vain välineet kasvaa menettämättä sitä, mikä tekee kustakin organisaatiosta ainutlaatuisen.',
-        about_p3:     'Taustani on prosessiasiantuntijana ja projektipäällikkönä. Valmistuin äskettäin tieto- ja viestintätekniikan tutkinnosta ÅYS:stä / grit:labista ja työskentelen nyt ohjelmistosuunnittelijana – mutta DigiFlow on tapani hyödyntää koko kokemustani. Seison asiakkaan puolella ja autan organisaatioita vapauttamaan aikaa sille, mikä todella luo arvoa: asiakkaille ja luovuudelle.',
-        tag_logistics:   'Logistiikka',
-        tag_public:      'Julkinen sektori',
-        tag_insurance:   'Vakuutus',
-        tag_fintech:     'Fintech',
-        tag_hospitality: 'Hospitality',
-        tag_commerce:    'Kauppa',
-        tag_process:     'Prosessinhallinta',
-        tag_pm:          'Projektinhallinta',
-        products_label: 'Tarjoukset',
-        products_title: 'Paketit ja tuotteet',
-        products_sub:   'Kiinteät tarjoukset yleisiin tarpeisiin – selkeä sisältö, selkeä hinta.',
-        products_soon:  'Tuote tai paketti tulossa pian',
-        contact_label:  'Yhteystiedot',
-        contact_title:  'Valmis ottamaan seuraavan askeleen?',
-        contact_sub:    'Lähetä meille sähköposti ja palaamme asiaan yhden arkipäivän sisällä.',
-        prep_heading:   'Saadaksemme kaiken irti ensimmäisestä tapaamisesta, voit liittää viestiin:',
-        prep_l1: 'Lyhyt kuvaus organisaatiostanne',
-        prep_l2: 'Likimääräinen henkilöstömäärä',
-        prep_l3: 'Tärkeimmät haasteet tai ongelmat, joita kohtaatte tällä hetkellä',
-        footer_copy: '© 2026 DigiFlow. Kaikki oikeudet pidätetään.',
-      }
-    };
-
-    let currentLang = 'sv';
-
-    function setLang(lang) {
-      currentLang = lang;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
-      });
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const value = translations[lang][key];
-        if (value !== undefined) el.innerHTML = value;
-      });
-    }
-
-    // Init
-    setLang('sv');
-  </script>
 
 </body>
 </html>
