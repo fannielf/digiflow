@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigiFlow</title>
-  <meta name="description" content="DigiFlow hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering." />
+  <title>Digital Process Flows Åland</title>
+  <meta name="description" content="Digital Process Flows Åland hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering." />
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg" />
+  <link rel="apple-touch-icon" href="images/favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -51,13 +53,14 @@
 
     .nav-logo {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
       color: var(--teal);
       text-decoration: none;
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
-    .nav-logo span { color: var(--pink); }
+    .nav-logo .mark { color: var(--pink); }
 
     .nav-right {
       display: flex;
@@ -116,6 +119,14 @@
     }
 
     .hero-content { max-width: 680px; position: relative; z-index: 1; }
+
+    .hero-logo {
+      width: clamp(168px, 18vw, 216px);
+      height: auto;
+      display: block;
+      margin-bottom: 1.75rem;
+      mix-blend-mode: multiply;
+    }
 
     .hero-badge {
       display: inline-block;
@@ -508,7 +519,7 @@
       text-decoration: none;
     }
 
-    .footer-logo span { color: var(--pink); }
+    .footer-logo .mark { color: var(--pink); }
 
     @media (max-width: 640px) {
       nav ul { display: none; }
@@ -520,7 +531,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Digi<span>Flow</span></a>
+    <a href="#" class="nav-logo"><span class="mark">Digi</span>tal Process <span class="mark">Flow</span>s Åland</a>
     <div class="nav-right">
       <ul>
         <li><a href="#tjanster">Tjänster</a></li>
@@ -534,9 +545,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
+      <img class="hero-logo" src="images/digiflow_logo.jpg" alt="Digital Process Flows Åland" />
       <span class="hero-badge">Processer · Digitalisering · Projektstöd</span>
       <h1>Från röriga processer till <em>digital klarhet</em></h1>
-      <p>DigiFlow hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering.</p>
+      <p>Digital Process Flows Åland hjälper små och medelstora företag och organisationer utan egen teknisk expertis att ta tillvara möjligheterna med digitalisering och automatisering.</p>
       <div class="hero-actions">
         <a href="#kontakt" class="btn-primary">Boka ett samtal</a>
         <a href="#tjanster" class="btn-secondary">Se mina tjänster</a>
@@ -546,7 +558,7 @@
 
   <!-- SERVICES -->
   <section class="services" id="tjanster">
-    <h2 class="section-title">Tre sätt DigiFlow skapar värde</h2>
+    <h2 class="section-title">Tre sätt Digital Process Flows Åland skapar värde</h2>
     <p class="section-sub">Jag möter er där ni är och hjälper er dit ni vill komma.</p>
     <div class="services-grid">
 
@@ -609,7 +621,7 @@
 
   <!-- ABOUT -->
   <section class="about" id="om-mig">
-    <p class="section-label">Bakom DigiFlow</p>
+    <p class="section-label">Bakom Digital Process Flows Åland</p>
     <h2 class="section-title">Hej, jag heter Fanni</h2>
     <div class="about-inner">
       <div class="about-photo-wrap">
@@ -694,8 +706,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="footer-logo">Digi<span>Flow</span></a>
-    <span>© 2026 DigiFlow. FO-nummer 3635894-4. Alla rättigheter förbehållna.</span>
+    <a href="#" class="footer-logo"><span class="mark">Digi</span>tal Process <span class="mark">Flow</span>s Åland</a>
+    <span>© 2026 Digital Process Flows Åland. FO-nummer 3635894-4. Alla rättigheter förbehållna.</span>
   </footer>
 
 
